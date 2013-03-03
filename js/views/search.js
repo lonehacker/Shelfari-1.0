@@ -5,7 +5,7 @@ SearchView = Backbone.View.extend({
   render: function(){
    var books = this.model.models;
    var len = books.length;
-   $(this.el).html('<ul class="resultslist"></ul>');
+   $(this.el).html('<ul class="resultslist" style="list-style: none;"></ul>');
    for (var i = 0; i < len; i++) {
     $('.resultslist', this.el).append(new SearchListItemView({model: books[i]}).render().el);
    }

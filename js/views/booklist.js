@@ -14,8 +14,7 @@ search: function() {
         var len = books.length;
         var startPos = (this.options.page - 1) * 8;
         var endPos = Math.min(startPos + 8, len);
-       $(this.el).html('<label>Search</label> <input type="text" id="search_input" /> <input type="button" id="search" value="Search" /> <ul class="bookslist" style="list-style: none;"></ul>');
-    
+       $(this.el).html(this.template);
         for (var i = startPos; i < endPos; i++) {
             $('.bookslist', this.el).append(new bookListItemView({model: books[i]}).render().el);
         }
